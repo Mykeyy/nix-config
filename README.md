@@ -1,7 +1,4 @@
-# InvraNet's NixOS Flake
-
-My main operating system is NixOS, which means this flake will be updated often.
-This system is meant to be partially modular to allow for configuration and installation for your user.
+# Mykey's NixOS Flake
 
 ## Example
 This section shows what the flake will look like.
