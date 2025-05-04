@@ -1,0 +1,28 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "vim_mode": true,
+  "theme": {
+    "mode": "system",
+    "light": "Rosé Pine",
+    "dark": "Rosé Pine",
+  },
+  "terminal": {
+    "line_height": "standard",
+    "font_family": "Hack"
+  },
+  "auto_install_extensions": {
+    "rose-pine-theme": true,
+    "html": true,
+    "nix": true,
+    "discord-presence": true
+  }
+}

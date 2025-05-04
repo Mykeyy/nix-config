@@ -1,0 +1,559 @@
+{
+  "bar": {
+    "autoHide": "never",
+    "battery": {
+      "hideLabelWhenFull": false,
+      "label": true,
+      "middleClick": "",
+      "rightClick": "",
+      "scrollDown": "",
+      "scrollUp": ""
+    },
+    "bluetooth": {
+      "label": true,
+      "middleClick": "",
+      "rightClick": "",
+      "scrollDown": "",
+      "scrollUp": ""
+    },
+    "clock": {
+      "format": "%a %b %d  %I:%M:%S %p",
+      "icon": "󰸗",
+      "middleClick": "",
+      "rightClick": "",
+      "scrollDown": "",
+      "scrollUp": "",
+      "showIcon": true,
+      "showTime": true
+    },
+    "customModules": {
+      "cava": {
+        "autoSensitivity": true,
+        "barCharacters": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+        "bars": 10,
+        "channels": 2,
+        "framerate": 320,
+        "highCutoff": 10000,
+        "icon": "",
+        "leftClick": "",
+        "lowCutoff": 50,
+        "middleClick": "",
+        "noiseReduction": 0.77,
+        "rightClick": "",
+        "samplerate": 44100,
+        "scrollDown": "",
+        "scrollUp": "",
+        "showActiveOnly": false,
+        "showIcon": true,
+        "spaceCharacter": " ",
+        "stereo": false
+      },
+      "cpu": {
+        "icon": "",
+        "label": true,
+        "leftClick": "",
+        "middleClick": "",
+        "pollingInterval": 2000,
+        "rightClick": "",
+        "round": true,
+        "scrollDown": "",
+        "scrollUp": ""
+      },
+      "cpuTemp": {
+        "icon": "",
+        "label": true,
+        "leftClick": "",
+        "middleClick": "",
+        "pollingInterval": 2000,
+        "rightClick": "",
+        "round": true,
+        "scrollDown": "",
+        "scrollUp": "",
+        "sensor": "",
+        "showUnit": true,
+        "unit": "metric"
+      },
+      "hypridle": {
+        "label": true,
+        "middleClick": "",
+        "offIcon": "",
+        "offLabel": "Off",
+        "onIcon": "",
+        "onLabel": "On",
+        "pollingInterval": 2000,
+        "rightClick": "",
+        "scrollDown": "",
+        "scrollUp": ""
+      },
+      "hyprsunset": {
+        "label": true,
+        "middleClick": "",
+        "offIcon": "󰛨",
+        "offLabel": "Off",
+        "onIcon": "󱩌",
+        "onLabel": "On",
+        "pollingInterval": 2000,
+        "rightClick": "",
+        "scrollDown": "",
+        "scrollUp": "",
+        "temperature": "6000k"
+      },
+      "kbLayout": {
+        "icon": "󰌌",
+        "label": true,
+        "labelType": "code",
+        "leftClick": "",
+        "middleClick": "",
+        "rightClick": "",
+        "scrollDown": "",
+        "scrollUp": ""
+      },
+      "microphone": {
+        "label": true,
+        "leftClick": "menu:audio",
+        "middleClick": "",
+        "mutedIcon": "󰍭",
+        "rightClick": "",
+        "scrollDown": "",
+        "scrollUp": "",
+        "unmutedIcon": "󰍬"
+      },
+      "netstat": {
+        "dynamicIcon": false,
+        "icon": "󰖟",
+        "label": true,
+        "labelType": "full",
+        "leftClick": "",
+        "middleClick": "",
+        "networkInLabel": "↓",
+        "networkInterface": "",
+        "networkOutLabel": "↑",
+        "pollingInterval": 2000,
+        "rateUnit": "auto",
+        "rightClick": "",
+        "round": true
+      },
+      "power": {
+        "icon": "",
+        "leftClick": "menu:powerdropdown",
+        "middleClick": "",
+        "rightClick": "",
+        "scrollDown": "",
+        "scrollUp": "",
+        "showLabel": true
+      },
+      "ram": {
+        "icon": "",
+        "label": true,
+        "labelType": "percentage",
+        "leftClick": "",
+        "middleClick": "",
+        "pollingInterval": 2000,
+        "rightClick": "",
+        "round": true
+      },
+      "scrollSpeed": 5,
+      "storage": {
+        "icon": "󰋊",
+        "label": true,
+        "labelType": "percentage",
+        "leftClick": "",
+        "middleClick": "",
+        "pollingInterval": 2000,
+        "rightClick": "",
+        "round": false
+      },
+      "submap": {
+        "disabledIcon": "󰌌",
+        "disabledText": "Submap off",
+        "enabledIcon": "󰌐",
+        "enabledText": "Submap On",
+        "label": true,
+        "leftClick": "",
+        "middleClick": "",
+        "rightClick": "",
+        "scrollDown": "",
+        "scrollUp": "",
+        "showSubmapName": true
+      },
+      "updates": {
+        "autoHide": false,
+        "icon": {
+          "pending": "󰏗",
+          "updated": "󰏖"
+        },
+        "label": true,
+        "leftClick": "",
+        "middleClick": "",
+        "padZero": true,
+        "pollingInterval": 1440000,
+        "rightClick": "",
+        "scrollDown": "",
+        "scrollUp": "",
+        "updateCommand": ""
+      },
+      "weather": {
+        "label": true,
+        "leftClick": "",
+        "middleClick": "",
+        "rightClick": "",
+        "scrollDown": "",
+        "scrollUp": "",
+        "unit": "imperial"
+      },
+      "worldclock": {
+        "divider": "  ",
+        "format": "%I:%M:%S %p %Z",
+        "formatDiffDate": "%a %b %d  %I:%M:%S %p %Z",
+        "icon": "󱉊",
+        "middleClick": "",
+        "rightClick": "",
+        "scrollDown": "",
+        "scrollUp": "",
+        "showIcon": true,
+        "showTime": true,
+        "tz": [
+          "Australia/Sydney",
+          "Australia/John_Pork",
+          "Pacific/Auckland",
+          "Asia/Kathmandu",
+          "Asia/Jerusalem",
+          "Asia/Ho_Chi_Minh",
+          "America/Bogota",
+          "Australia/Eucla",
+          "Asia/Kolkata"
+        ]
+      }
+    },
+    "launcher": {
+      "autoDetectIcon": true,
+      "icon": "",
+      "middleClick": "",
+      "rightClick": "",
+      "scrollDown": "",
+      "scrollUp": ""
+    },
+    "media": {
+      "format": "{artist: - }{title}",
+      "middleClick": "",
+      "rightClick": "",
+      "scrollDown": "",
+      "scrollUp": "",
+      "show_active_only": false,
+      "show_label": true,
+      "truncation": true,
+      "truncation_size": 30
+    },
+    "network": {
+      "label": true,
+      "middleClick": "",
+      "rightClick": "",
+      "scrollDown": "",
+      "scrollUp": "",
+      "showWifiInfo": false,
+      "truncation": true,
+      "truncation_size": 7
+    },
+    "notifications": {
+      "hideCountWhenZero": false,
+      "middleClick": "",
+      "rightClick": "",
+      "scrollDown": "",
+      "scrollUp": "",
+      "show_total": false
+    },
+    "scrollSpeed": 5,
+    "systray": {
+      "ignore": []
+    },
+    "volume": {
+      "label": true,
+      "middleClick": "",
+      "rightClick": "",
+      "scrollDown": "/nix/store/gh6x61ckxxcmh54qc1fbfl0v6akc074p-hyprpanel/bin/hyprpanel 'vol -5'",
+      "scrollUp": "/nix/store/gh6x61ckxxcmh54qc1fbfl0v6akc074p-hyprpanel/bin/hyprpanel 'vol +5'"
+    },
+    "windowtitle": {
+      "class_name": true,
+      "custom_title": true,
+      "icon": true,
+      "label": true,
+      "leftClick": "",
+      "middleClick": "",
+      "rightClick": "",
+      "scrollDown": "",
+      "scrollUp": "",
+      "truncation": true,
+      "truncation_size": 50
+    },
+    "workspaces": {
+      "applicationIconEmptyWorkspace": "",
+      "applicationIconFallback": "󰣆",
+      "applicationIconMap": {},
+      "applicationIconOncePerWorkspace": true,
+      "icons": {
+        "active": "",
+        "available": "",
+        "occupied": ""
+      },
+      "ignored": "",
+      "monitorSpecific": true,
+      "numbered_active_indicator": "underline",
+      "reverse_scroll": false,
+      "scroll_speed": 5,
+      "showAllActive": true,
+      "showApplicationIcons": false,
+      "showWsIcons": false,
+      "show_icons": true,
+      "show_numbered": false,
+      "spacing": 1,
+      "workspaceIconMap": {},
+      "workspaceMask": false,
+      "workspaces": 5
+    }
+  },
+  "dummy": true,
+  "hyprpanel": {
+    "restartAgs": true,
+    "restartCommand": "/nix/store/gh6x61ckxxcmh54qc1fbfl0v6akc074p-hyprpanel/bin/hyprpanel q; /nix/store/gh6x61ckxxcmh54qc1fbfl0v6akc074p-hyprpanel/bin/hyprpanel"
+  },
+  "layout": {},
+  "menus": {
+    "clock": {
+      "time": {
+        "hideSeconds": false,
+        "military": false
+      },
+      "weather": {
+        "enabled": true,
+        "interval": 60000,
+        "key": "",
+        "location": "Los Angeles",
+        "unit": "metric"
+      }
+    },
+    "dashboard": {
+      "controls": {
+        "enabled": true
+      },
+      "directories": {
+        "enabled": false,
+        "left": {
+          "directory1": {
+            "command": "bash -c \"xdg-open $HOME/Downloads/\"",
+            "label": "󰉍 Downloads"
+          },
+          "directory2": {
+            "command": "bash -c \"xdg-open $HOME/Videos/\"",
+            "label": "󰉏 Videos"
+          },
+          "directory3": {
+            "command": "bash -c \"xdg-open $HOME/Projects/\"",
+            "label": "󰚝 Projects"
+          }
+        },
+        "right": {
+          "directory1": {
+            "command": "bash -c \"xdg-open $HOME/Documents/\"",
+            "label": "󱧶 Documents"
+          },
+          "directory2": {
+            "command": "bash -c \"xdg-open $HOME/Pictures/\"",
+            "label": "󰉏 Pictures"
+          },
+          "directory3": {
+            "command": "bash -c \"xdg-open $HOME/\"",
+            "label": "󱂵 Home"
+          }
+        }
+      },
+      "powermenu": {
+        "avatar": {
+          "image": "$HOME/.face.icon",
+          "name": "system"
+        },
+        "confirmation": true,
+        "logout": "hyprctl dispatch exit",
+        "reboot": "systemctl reboot",
+        "shutdown": "systemctl poweroff",
+        "sleep": "systemctl suspend"
+      },
+      "recording": {
+        "path": "$HOME/Videos/Screencasts"
+      },
+      "shortcuts": {
+        "enabled": true,
+        "left": {
+          "shortcut1": {
+            "command": "microsoft-edge-stable",
+            "icon": "󰇩",
+            "tooltip": "Microsoft Edge"
+          },
+          "shortcut2": {
+            "command": "spotify-launcher",
+            "icon": "",
+            "tooltip": "Spotify"
+          },
+          "shortcut3": {
+            "command": "discord",
+            "icon": "",
+            "tooltip": "Discord"
+          },
+          "shortcut4": {
+            "command": "rofi -show drun",
+            "icon": "",
+            "tooltip": "Search Apps"
+          }
+        },
+        "right": {
+          "shortcut1": {
+            "command": "sleep 0.5 && hyprpicker -a",
+            "icon": "",
+            "tooltip": "Color Picker"
+          },
+          "shortcut3": {
+            "command": "bash -c \"/nix/store/l3s52iggy014p38vi1ri5mi4rjb4qggb-snapshot.sh\"",
+            "icon": "󰄀",
+            "tooltip": "Screenshot"
+          }
+        }
+      },
+      "stats": {
+        "enable_gpu": true,
+        "enabled": true,
+        "interval": 2000
+      }
+    },
+    "media": {
+      "displayTime": false,
+      "displayTimeTooltip": false,
+      "hideAlbum": false,
+      "hideAuthor": false,
+      "noMediaText": "No Media Currently Playing"
+    },
+    "power": {
+      "confirmation": true,
+      "logout": "hyprctl dispatch exit",
+      "lowBatteryNotification": false,
+      "lowBatteryNotificationText": "Your battery is running low ($POWER_LEVEL %).\\n\\nPlease plug in your charger.",
+      "lowBatteryNotificationTitle": "Warning: Low battery",
+      "lowBatteryThreshold": 20,
+      "reboot": "systemctl reboot",
+      "showLabel": true,
+      "shutdown": "systemctl poweroff",
+      "sleep": "systemctl suspend"
+    },
+    "transition": "crossfade",
+    "transitionTime": 200,
+    "volume": {
+      "raiseMaximumVolume": false
+    }
+  },
+  "notifications": {
+    "active_monitor": true,
+    "cache_actions": true,
+    "clearDelay": 100,
+    "displayedTotal": 10,
+    "ignore": [],
+    "monitor": 0,
+    "position": "top right",
+    "showActionsOnHover": false,
+    "timeout": 7000
+  },
+  "scalingPriority": "gdk",
+  "tear": false,
+  "terminal": "$TERM",
+  "theme": {
+    "bar": {
+      "menus": {
+        "text": "#123ABC"
+      }
+    }
+  },
+  "wallpaper": {
+    "enable": true,
+    "image": "",
+    "pywal": false
+  },
+  "theme.font.name": "System-ui",
+  "theme.font.label": "System-ui Bold",
+  "theme.bar.floating": false,
+  "theme.bar.buttons.windowtitle.enableBorder": false,
+  "bar.battery.label": false,
+  "bar.clock.showTime": true,
+  "notifications.position": "top right",
+  "menus.media.hideAuthor": false,
+  "menus.media.hideAlbum": false,
+  "theme.osd.orientation": "horizontal",
+  "theme.osd.location": "bottom",
+  "menus.clock.time.military": true,
+  "menus.clock.time.hideSeconds": false,
+  "menus.volume.raiseMaximumVolume": false,
+  "bar.launcher.autoDetectIcon": true,
+  "theme.bar.buttons.dashboard.enableBorder": false,
+  "theme.bar.location": "top",
+  "theme.bar.buttons.enableBorders": false,
+  "theme.bar.buttons.borderSize": "0.1em",
+  "theme.font.size": "1.1rem",
+  "menus.clock.weather.location": "Sydney",
+  "menus.clock.weather.unit": "metric",
+  "theme.bar.menus.opacity": 100,
+  "theme.bar.opacity": 97,
+  "theme.bar.buttons.opacity": 80,
+  "bar.customModules.cava.showIcon": true,
+  "bar.customModules.weather.label": false,
+  "bar.customModules.weather.unit": "metric",
+  "bar.customModules.netstat.label": true,
+  "bar.layouts": {
+    "0": {
+      "left": ["dashboard", "workspaces", "windowtitle"],
+      "middle": ["media", "cava"],
+      "right": ["volume", "network", "systray", "clock", "notifications"]
+    },
+    "1": {
+      "left": ["dashboard", "workspaces", "windowtitle"],
+      "middle": ["media"],
+      "right": ["volume", "clock", "notifications"]
+    },
+    "2": {
+      "left": ["dashboard", "workspaces", "windowtitle"],
+      "middle": ["media", "cava"],
+      "right": ["volume", "clock", "notifications"]
+    }
+  },
+  "menus.dashboard.stats.enable_gpu": false,
+  "menus.dashboard.shortcuts.left.shortcut2.command": "spotify",
+  "menus.dashboard.shortcuts.left.shortcut3.command": "vesktop",
+  "menus.dashboard.shortcuts.left.shortcut1.icon": "󰖟",
+  "menus.dashboard.shortcuts.right.shortcut3.command": "nu ~/.config/hypr/scripts/screenshot.nu",
+  "menus.dashboard.controls.enabled": false,
+  "menus.dashboard.directories.enabled": false,
+  "menus.dashboard.shortcuts.left.shortcut4.tooltip": "Open Rofi",
+  "menus.dashboard.shortcuts.left.shortcut1.command": "zen",
+  "menus.dashboard.shortcuts.left.shortcut1.tooltip": "Zen",
+  "menus.dashboard.stats.interval": 1000,
+  "theme.bar.menus.menu.dashboard.profile.radius": "1em",
+  "theme.osd.radius": "0.5em",
+  "theme.osd.border.size": "0.05em",
+  "theme.osd.muted_zero": true,
+  "notifications.showActionsOnHover": true,
+  "theme.notification.border_radius": "0.5em",
+  "theme.notification.enableShadow": false,
+  "theme.bar.menus.menu.notifications.height": "30em",
+  "notifications.timeout": 4000,
+  "bar.workspaces.show_icons": false,
+  "bar.workspaces.showWsIcons": true,
+  "bar.workspaces.showApplicationIcons": true,
+  "theme.bar.buttons.workspaces.numbered_active_highlight_border": "0.25em",
+  "bar.workspaces.applicationIconOncePerWorkspace": true,
+  "bar.workspaces.numbered_active_indicator": "highlight",
+  "theme.bar.buttons.workspaces.numbered_active_highlight_padding": "0.5em",
+  "theme.bar.buttons.workspaces.numbered_inactive_padding": "0.5em",
+  "bar.workspaces.workspaceMask": false,
+  "bar.windowtitle.icon": true,
+  "bar.windowtitle.truncation": true,
+  "bar.windowtitle.class_name": true,
+  "bar.bluetooth.label": false,
+  "bar.media.truncation": true,
+  "bar.media.truncation_size": 50
+}

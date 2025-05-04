@@ -1,0 +1,95 @@
+/**
+ * @name Rose Pine
+ * @author InvraNet
+ * @authorLink https://github.com/SEELE1306
+ * @description Soho vibes for discord.
+ * @license GPLv3
+ * @version 1.2.5
+ * @authorId 488590546873483276
+ * @discord invra.net
+ **/
+
+.visual-refresh.theme-midnight, .visual-refresh .theme-midnight {
+    --bg-brand: #ebbcba;
+    --background-base-lower: #181624;
+    --background-base-lowest: #191724;
+    --background-base-low: #1f1d2e;
+    --background-primary: #1f1d2b;
+    --background-secondary: #191822;
+    --background-tertiary: #14131b;
+    --bg-base-tertiary: #191724;
+    --bg-base-secondary: #1d1b2b;
+    --bg-surface-overlay: #171524;
+    --bg-surface-raised: #171524;
+    --background-surface-high: #1c1929;
+    --background-surface-higher: #1e1b2c;
+    --background-surface-highest: #1b1825;
+    --background-secondary-alt: #1b1825;
+    --background-floating: #19162b;
+    --user-profile-overlay-background: #242138;
+    --card-primary-bg: #191724;
+    --custom-channel-members-bg: ;
+
+    --chat-background-default: #1f1d2e;
+
+    --autocomplete-bg: #1b1927;
+
+    --modal-footer-background: #1a1927;
+    --modal-background: #161622;
+
+    --notice-background-positive: rgba(0,195,0, 0.15);
+    --notice-background-critical: rgba(255,0,0, 0.15);
+
+    --text-normal: #e0def4;
+    --text-code-keyword: #eb6f92;
+    --text-code-string: #9ccfd8;
+    --text-code-title: #31748f;
+    --text-code-variable: #64bbca;
+
+    --twitch: #c4a7e752;
+}
+
+.wrapper__6e9f8.selected__6e9f8 .childWrapper__6e9f8, .wrapper__6e9f8:hover .childWrapper__6e9f8 {
+  background-opacity: 50%;
+  background-color: #ebbcba55;
+}
+
+.colorStreamerMode__6e2b9 {
+  --custom-notice-text: #c4a7e7;
+}
+
+
+.callContainer_cb9592.theme-dark.theme-midnight {
+    background: #191822;
+}
+
+.midnightIcon__36dee {
+    background-color: #1f1d2e;
+}
+
+.theme-dark #vc-spotify-player {
+    background-color: var(--background-base-high);
+}
+
+.bar_c38106.shortBar_c38106 {
+    display: none;
+}
+
+.buttonSection__1405b.experimentButtonSection__1405b {
+    background: #1e1b2c;
+}
+
+.theme-dark .experimentButton_e131a9 .buttonColor_e131a9.buttonActive_e131a9, .theme-dark .experimentButton_e131a9.buttonColor_e131a9.buttonActive_e131a9, .theme-dark.custom-theme-background .experimentButton_e131a9 .buttonColor_e131a9.buttonActive_e131a9, .theme-dark.custom-theme-background .experimentButton_e131a9.buttonColor_e131a9.buttonActive_e131a9 {
+  background-color: #9ccfd855;
+  color: #9ccfd8;
+}
+
+.theme-dark .experimentButton_e131a9 .buttonColor_e131a9.buttonActive_e131a9:hover, .theme-dark .experimentButton_e131a9.buttonColor_e131a9.buttonActive_e131a9:hover, .theme-dark.custom-theme-background .experimentButton_e131a9 .buttonColor_e131a9.buttonActive_e131a9:hover, .theme-dark.custom-theme-background .experimentButton_e131a9.buttonColor_e131a9.buttonActive_e131a9:hover { 
+  background-color: #9ccfd877;
+  color: #9ccfd8;
+}
+
+.theme-dark .experimentButton_e131a9 .buttonColor_e131a9.buttonActive_e131a9:active, .theme-dark .experimentButton_e131a9.buttonColor_e131a9.buttonActive_e131a9:active, .theme-dark.custom-theme-background .experimentButton_e131a9 .buttonColor_e131a9.buttonActive_e131a9:active, .theme-dark.custom-theme-background .experimentButton_e131a9.buttonColor_e131a9.buttonActive_e131a9:active {
+  background-color: #9ccfd99;
+  color: #9ccfd8;
+}

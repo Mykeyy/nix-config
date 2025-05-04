@@ -1,0 +1,53 @@
+[user]
+username = "mykey"
+displayName = "Mykey"
+initialPassword = "1234"
+
+[system]
+greeter = "gdm"
+hostname = "NixOS"
+timezone = "Asia/Manila"
+locale = "en_AU.UTF-8"
+kernelParams = ["intel_iommu=on"]
+
+[system.networking]
+networkmanager = true
+firewallEnabled = false
+dhcpEnabled = true
+
+
+[system.graphics]
+blacklists = ["nouveau"]
+wanted = ["nvidia"]
+
+[system.services]
+ssh.enable = true
+mongodb.enable = true
+
+[desktop]
+[desktop.plasma]
+enable = true
+
+[desktop.hyprland]
+enable = true
+
+[[desktop.hyprland.monitors]]
+name = "eDP-1"
+resolution = "1920x1080"
+refreshRate = 144
+position = "2560x0"
+scale = 1
+
+[[desktop.hyprland.monitors]]
+name = "HDMI-A-1"
+resolution = "2560x1440"
+refreshRate = 144
+position = "0x0"
+scale = 1
+
+[development]
+[development.git]
+username = "mykeyy"
+types = ["GitHub"]
+email = "mykey.discord@gmail.com"
+defaultBranch = "main"
