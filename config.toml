@@ -25,6 +25,7 @@ ssh.enable = true
 mongodb.enable = true
 
 [desktop]
+
 [desktop.plasma]
 enable = true
 

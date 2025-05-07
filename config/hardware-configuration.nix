@@ -13,21 +13,19 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  hardware.nvidia.open = true;
-
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/ad413749-4b00-4811-b8d3-01bd78ad40f4";
+    { device = "/dev/disk/by-uuid/2e681e39-5b53-4a50-8fd5-45d6f434d653";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/1E97-7408";
+    { device = "/dev/disk/by-uuid/CF92-BB70";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/ddb1db0a-8ead-4f0f-8688-3518be1d37e0"; }
+    [ { device = "/dev/disk/by-uuid/2d3a255b-690f-41ec-96bf-c5c1580b8e1f"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

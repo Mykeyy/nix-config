@@ -1,5 +1,5 @@
 user: system: desktop:
-{ nixpkgs, pkgs, ... }: {
+{ nixpkgs, pkgs, config, ... }: {
   imports = [
     ./stylix.nix
     (import ./displayManager.nix system)
@@ -30,6 +30,22 @@ user: system: desktop:
       diskSize = 128 * 1024;
     };
   };
+
+  hardware.nvidia = {
+    # https://nixos.wiki/wiki/Nvidia
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = true;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    # prime = {
+    #  sync.enable = true;
+    #  nvidiaBusId = "PCI:1:0.0"; 
+    #  intelBusId = "PCI:0:2.0";
+    # };
+  };
+
 
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_6_12;

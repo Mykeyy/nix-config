@@ -2,7 +2,7 @@
   stylix = {
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
-    image = ./config/.wallpapers/nature.jpg;
+    image = ./config/.wallpapers/purpleglaze.png;
     targets = {
       btop.enable = false;
       starship.enable = false;

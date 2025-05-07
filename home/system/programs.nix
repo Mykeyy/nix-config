@@ -22,6 +22,7 @@
     luarocks
     nil
 
+
     # Multimedia Tools
     viu
     vlc
@@ -29,6 +30,7 @@
     wayvnc
     ffmpeg
     fzf
+    libsForQt5.kdenlive
 
     # System Libraries & Utilities
     wl-clipboard
@@ -44,19 +46,33 @@
     grim
     killall
     swww
+    xclicker
+    
+    #school stuff
+    teams-for-linux
 
     # CLI Utilities
     yt-dlp
     wineWowPackages.stable
     superfile
+    fanctl
+    qpwgraph
     coolercontrol.coolercontrol-gui
+    
+    # games and stuff
+    lutris-unwrapped
+    bottles
+
 
     # Day-to-Day Applications
     inputs.zen-browser.outputs.packages.${pkgs.system}.default
+    easyeffects
     chromium
     signal-desktop-bin
     parsec-bin
     obsidian
+    lunar-client
+    flatpak
     prismlauncher
   ];
 
@@ -123,6 +139,7 @@
       enable = true;
       package = pkgs.btop-rocm;
     };
+    
 
     nixcord = {
       enable = true;
@@ -134,6 +151,7 @@
         themeLinks = [ ];
         frameless = true;
         plugins = {
+          experiments.enable = true;
           betterSettings.enable = true;
           callTimer.enable = true;
           crashHandler.enable = true;

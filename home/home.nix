@@ -11,6 +11,8 @@
     ./file.nix
   ];
 
+  # home.packages = with pkgs; [lolcat cowsay];
+
   home = {
     username = user.username;
     homeDirectory = "/home/" + user.username;
