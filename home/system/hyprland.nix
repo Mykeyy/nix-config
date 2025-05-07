@@ -60,6 +60,11 @@ in {
 
       render = { explicit_sync = false; };
 
+      env = [
+        "LIBVA_DRIVER_NAME,nvidia"
+        "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+      ];
+
       dwindle = {
         pseudotile = true;
         preserve_split = true;
