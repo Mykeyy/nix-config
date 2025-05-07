@@ -15,7 +15,7 @@ user: system: desktop:
     ];
   };
   
-  powerManagement.cpuFreqGovernor = "performance";
+  
   time.timeZone = system.timezone;
 
   virtualisation = {
