@@ -14,7 +14,8 @@ user: system: desktop:
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
   };
-
+  
+  powerManagement.cpuFreqGovernor = "performance";
   time.timeZone = system.timezone;
 
   virtualisation = {
@@ -45,14 +46,14 @@ user: system: desktop:
       persistencedSha256 = "sha256-dgmco+clEIY8bedxHC4wp+fH5JavTzyI1BI8BxoeJJI=";
     };
 
-    prime = {
-      offload = {
-        enable = true;
-        enableOffloadCmd = true;
-      };
-      nvidiaBusId = "PCI:1:0:0";
-      intelBusId = "PCI:0:2:0";
-    };
+    # prime = {
+    #   sync = {
+    #     enable = true;
+    #   #  enableOffloadCmd = true;
+    #   };
+    #   nvidiaBusId = "PCI:1:0:0";
+    #   intelBusId = "PCI:0:2:0";
+    # };
   };
 
 
