@@ -1,6 +1,9 @@
 system: {
-  services.xserver.displayManager.gdm = {
-    enable = system.greeter == "gdm";
-    wayland = true;
+  services.xserver = {
+    displayManager.gdm = {
+      enable = system.greeter == "gdm";
+      wayland = true;
+    };
+    videoDrivers = ["nvidia"];
   };
 }
