@@ -66,11 +66,10 @@
     # Day-to-Day Applications
     inputs.zen-browser.outputs.packages.${pkgs.system}.default
     easyeffects
+    kdePackages.kcolorpicker
     chromium
-    signal-desktop-bin
     parsec-bin
     obsidian
-    lunar-client
     flatpak
     prismlauncher
   ];
@@ -108,6 +107,7 @@
         kamikillerto.vscode-colorize
         bierner.github-markdown-preview
         mvllow.rose-pine
+        leonardssh.vscord
       ];
     };
 
