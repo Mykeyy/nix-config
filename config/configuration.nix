@@ -82,6 +82,7 @@ user: system: desktop:
   };
 
   services = {
+    flatpak.enable = true;
     qemuGuest.enable = true;
     spice-vdagentd.enable = true;
     xserver = {

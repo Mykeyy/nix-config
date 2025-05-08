@@ -47,8 +47,8 @@
     killall
     swww
     xclicker
-    
-    #school stuff
+
+    # School Tools
     teams-for-linux
 
     # CLI Utilities
@@ -58,11 +58,10 @@
     fanctl
     qpwgraph
     coolercontrol.coolercontrol-gui
-    
-    # games and stuff
+
+    # Games
     lutris-unwrapped
     bottles
-
 
     # Day-to-Day Applications
     inputs.zen-browser.outputs.packages.${pkgs.system}.default
@@ -75,6 +74,7 @@
     flatpak
     prismlauncher
   ];
+
 
   programs = {
     home-manager.enable = true;
@@ -135,11 +135,10 @@
       options = [ "--cmd cd" ];
     };
 
-     btop = {
+    btop = {
       enable = true;
       package = pkgs.btop-rocm;
     };
-    
 
     nixcord = {
       enable = true;
