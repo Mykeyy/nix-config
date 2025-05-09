@@ -70,6 +70,8 @@ in
       render.explicit_sync = false;
 
       env = [
+        "WLR_NO_HARDWARE_CURSORS,1"
+        "OGL_DEDICATED_HW_STATE_PER_CONTEXT,ENABLE_ROBUST"
         "LIBVA_DRIVER_NAME,nvidia"
         "__GLX_VENDOR_LIBRARY_NAME,nvidia"
       ];
