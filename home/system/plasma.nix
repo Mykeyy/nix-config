@@ -6,7 +6,8 @@ let
 
   # Extract Plasma configuration
   enable = tomlConfig.desktop.plasma.enable;
-in {
+in
+{
   programs.plasma = {
     inherit enable;
 
@@ -23,24 +24,33 @@ in {
       comment = "Launch Ghostty terminal.";
     };
 
-    panels = [{
-      location = "top";
-      hiding = "autohide";
-      floating = true;
+    panels = [
+      {
+        location = "top";
+        hiding = "autohide";
+        floating = true;
 
-      widgets = [
-        "org.kde.plasma.kickoff"
-        "org.kde.plasma.icontasks"
-        "org.kde.plasma.marginsseparator"
-        "org.kde.plasma.systemtray"
-        "org.kde.plasma.digitalclock"
-      ];
-    }];
+        widgets = [
+          "org.kde.plasma.kickoff"
+          "org.kde.plasma.icontasks"
+          "org.kde.plasma.marginsseparator"
+          "org.kde.plasma.systemtray"
+          "org.kde.plasma.digitalclock"
+        ];
+      }
+    ];
 
     shortcuts = {
-      ksmserver = { "Lock Session" = [ "Screensaver" "Meta+L" ]; };
+      ksmserver = {
+        "Lock Session" = [
+          "Screensaver"
+          "Meta+L"
+        ];
+      };
 
-      navigation = { "Quit" = "Meta+Q"; };
+      navigation = {
+        "Quit" = "Meta+Q";
+      };
 
       kwin = {
         "Switch Window Down" = "Meta+J";

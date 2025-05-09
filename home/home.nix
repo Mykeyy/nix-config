@@ -1,4 +1,11 @@
-{ development, user, pkgs, inputs, system, ... }:
+{
+  development,
+  user,
+  pkgs,
+  inputs,
+  system,
+  ...
+}:
 
 {
   imports = [

@@ -1,4 +1,10 @@
-{ development, pkgs, inputs, ... }: {
+{
+  development,
+  pkgs,
+  inputs,
+  ...
+}:
+{
   home.packages = with pkgs; [
     # Developer Tools
     python312
@@ -21,7 +27,6 @@
     kde-rounded-corners
     luarocks
     nil
-
 
     # Multimedia Tools
     viu
@@ -74,7 +79,6 @@
     prismlauncher
   ];
 
-
   programs = {
     home-manager.enable = true;
 
@@ -85,15 +89,21 @@
       userName = development.git.username;
       userEmail = development.git.email;
 
-      extraConfig = { init.defaultBranch = development.git.defaultBranch; };
+      extraConfig = {
+        init.defaultBranch = development.git.defaultBranch;
+      };
     };
 
     gh = {
       enable = true;
-      settings = { editor = "nvim"; };
+      settings = {
+        editor = "nvim";
+      };
     };
 
-    zed-editor = { enable = true; };
+    zed-editor = {
+      enable = true;
+    };
 
     vscode = {
       enable = true;
@@ -111,7 +121,9 @@
       ];
     };
 
-    neovim = { enable = true; };
+    neovim = {
+      enable = true;
+    };
 
     nushell = {
       enable = true;

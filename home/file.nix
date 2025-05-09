@@ -1,6 +1,9 @@
-{ ... }: {
+{ ... }:
+{
   home.file = {
-    ".config/starship.toml" = { source = ./system/config/starship.toml; };
+    ".config/starship.toml" = {
+      source = ./system/config/starship.toml;
+    };
     ".config/nvim" = {
       source = ./system/config/neovim;
       recursive = true;
@@ -13,7 +16,9 @@
       source = ./system/config/mako;
       recursive = true;
     };
-    ".config/btop/btop.conf" = { source = ./system/config/btop/btop.conf; };
+    ".config/btop/btop.conf" = {
+      source = ./system/config/btop/btop.conf;
+    };
     ".config/ghostty" = {
       source = ./system/config/ghostty;
       recursive = true;
@@ -33,4 +38,3 @@
     };
   };
 }
-

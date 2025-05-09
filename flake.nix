@@ -30,8 +30,18 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs-stable, nixpkgs, home-manager, plasma-manager
-    , hyprpanel, spicetify-nix, nixcord, stylix, ... }:
+  outputs =
+    inputs@{
+      nixpkgs-stable,
+      nixpkgs,
+      home-manager,
+      plasma-manager,
+      hyprpanel,
+      spicetify-nix,
+      nixcord,
+      stylix,
+      ...
+    }:
     let
       system = "x86_64-linux";
 
@@ -49,7 +59,8 @@
       config = (builtins.fromTOML (builtins.readFile ./config.toml));
       user = config.user;
       development = config.development;
-    in {
+    in
+    {
       nixosConfigurations.${user.username} = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
@@ -66,7 +77,15 @@
               ];
               users.${user.username} = ./home/home.nix;
               extraSpecialArgs = {
-                inherit pkgs development user unstable stable system inputs;
+                inherit
+                  pkgs
+                  development
+                  user
+                  unstable
+                  stable
+                  system
+                  inputs
+                  ;
                 username = user.username;
               };
             };
@@ -74,6 +93,6 @@
           stylix.nixosModules.stylix
         ];
       };
-      formatter.${system} = pkgs.nixfmt-classic;
+      formatter.${system} = pkgs.nixfmt-tree;
     };
 }

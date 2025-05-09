@@ -1,5 +1,11 @@
 user: system: desktop:
-{ nixpkgs, pkgs, config, ... }: {
+{
+  nixpkgs,
+  pkgs,
+  config,
+  ...
+}:
+{
   imports = [
     ./stylix.nix
     (import ./displayManager.nix system)
@@ -8,14 +14,16 @@ user: system: desktop:
   nixpkgs.config.allowUnfree = true;
 
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     substituters = [ "https://nix-community.cachix.org" ];
     trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
   };
-  
-  
+
   time.timeZone = system.timezone;
 
   virtualisation = {
@@ -32,8 +40,10 @@ user: system: desktop:
     };
   };
 
-  hardware.nvidia = {
-    open = true;
+  hardware.opengl.enable = true;
+
+  hardware.nvidia = { 
+    open = false;
     nvidiaSettings = true;
     modesetting.enable = true;
     powerManagement.enable = true;
@@ -46,16 +56,15 @@ user: system: desktop:
       persistencedSha256 = "sha256-dgmco+clEIY8bedxHC4wp+fH5JavTzyI1BI8BxoeJJI=";
     };
 
-    # prime = {
-    #   sync = {
-    #     enable = true;
-    #   #  enableOffloadCmd = true;
-    #   };
-    #   nvidiaBusId = "PCI:1:0:0";
-    #   intelBusId = "PCI:0:2:0";
-    # };
+    prime = {
+      offload = {
+        enable = true;
+          enableOffloadCmd = true;
+      };
+      nvidiaBusId = "PCI:1:0:0";
+      intelBusId = "PCI:0:2:0";
+    };
   };
-
 
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_6_12;
@@ -70,12 +79,14 @@ user: system: desktop:
 
   security = {
     doas = {
-      extraRules = [{
-        groups = [ "wheel" ];
+      extraRules = [
+        {
+          groups = [ "wheel" ];
 
-        keepEnv = true;
-        persist = true;
-      }];
+          keepEnv = true;
+          persist = true;
+        }
+      ];
       enable = true;
     };
     polkit.enable = true;
@@ -140,17 +151,20 @@ user: system: desktop:
     dolphin
   ];
 
-  hardware = { graphics.enable = true; };
+  hardware = {
+    graphics.enable = true;
+  };
 
   networking = {
     hostName = system.hostname;
     networkmanager.enable = system.networking.networkmanager;
     firewall.enable = system.networking.firewallEnabled;
-    };
+  };
   i18n.defaultLocale = system.locale;
   environment.stub-ld.enable = true;
 
   programs = {
+    xwayland.enable = true;
     hyprland.enable = true;
     nix-ld.enable = true;
     steam = {
@@ -170,7 +184,12 @@ user: system: desktop:
     initialPassword = user.initialPassword;
     description = user.displayName;
     shell = pkgs.nushell;
-    extraGroups = [ "networkmanager" "docker" "wheel" "libvirtd" ];
+    extraGroups = [
+      "networkmanager"
+      "docker"
+      "wheel"
+      "libvirtd"
+    ];
     packages = with pkgs; [
       wayvnc
       wget

@@ -4,6 +4,6 @@ system: {
       enable = system.greeter == "gdm";
       wayland = true;
     };
-    videoDrivers = ["nvidia"];
+    videoDrivers = [ "nvidia" ];
   };
 }

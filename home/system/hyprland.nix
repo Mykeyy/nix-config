@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   # Read and parse the TOML configuration file
@@ -15,20 +20,24 @@ let
     position = monitor.position;
     scale = monitor.scale;
   }) hyprland.monitors;
-in {
+in
+{
   imports = [ ./hyprpanel.nix ];
 
   wayland.windowManager.hyprland = {
     enable = hyprland.enable;
 
     settings = {
-      monitor = builtins.map (monitor:
-        "${monitor.name},${monitor.resolution}@${
-          builtins.toString monitor.refreshRate
-        },${monitor.position},${builtins.toString monitor.scale}") monitors;
+      monitor = builtins.map (
+        monitor:
+        "${monitor.name},${monitor.resolution}@${builtins.toString monitor.refreshRate},${monitor.position},${builtins.toString monitor.scale}"
+      ) monitors;
 
       # Auto-launching
-      exec-once = [ "swww-daemon &" "hyprpanel" ];
+      exec-once = [
+        "swww-daemon &"
+        "hyprpanel"
+      ];
 
       # General settings
       general = {
@@ -48,17 +57,23 @@ in {
         };
       };
 
-      animations = { enabled = true; };
+      animations = {
+        enabled = true;
+      };
 
       # Inputs (keyboard & mouse)
       input = {
         kb_layout = "us";
         follow_mouse = 1;
         sensitivity = 0.5;
-        touchpad = { natural_scroll = true; };
+        touchpad = {
+          natural_scroll = true;
+        };
       };
 
-      render = { explicit_sync = false; };
+      render = {
+        explicit_sync = false;
+      };
 
       env = [
         "LIBVA_DRIVER_NAME,nvidia"
@@ -102,8 +117,10 @@ in {
       ];
 
       # Mouse bindings
-      bindm =
-        [ "SUPER, mouse:272, movewindow" "SUPER, mouse:273, resizewindow" ];
+      bindm = [
+        "SUPER, mouse:272, movewindow"
+        "SUPER, mouse:273, resizewindow"
+      ];
 
       windowrulev2 = [
         "pin, title:Picture-in-Picture"

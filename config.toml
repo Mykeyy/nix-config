@@ -17,8 +17,8 @@ dhcpEnabled = true
 
 
 [system.graphics]
-blacklists = ["nouveau"]
-wanted = ["nvidia"]
+blacklists = ["amdgpu"]
+wanted = ["nouveau", "nvidia"]
 
 [system.services]
 ssh.enable = true
