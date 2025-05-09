@@ -1,6 +1,6 @@
 [user]
 username = "mykey"
-displayName = "Mykey"
+displayName = "mykey"
 initialPassword = "1234"
 
 [system]
@@ -17,8 +17,8 @@ dhcpEnabled = true
 
 
 [system.graphics]
-blacklists = ["amdgpu"]
-wanted = ["nouveau", "nvidia"]
+blacklists = ["amdgpu","nouveau"]
+wanted = ["nvidia"]
 
 [system.services]
 ssh.enable = true

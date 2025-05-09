@@ -47,20 +47,10 @@ user: system: desktop:
     nvidiaSettings = true;
     modesetting.enable = true;
     powerManagement.enable = true;
-    package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-      version = "575.51.02";
-      sha256_64bit = "sha256-XZ0N8ISmoAC8p28DrGHk/YN1rJsInJ2dZNL8O+Tuaa0=";
-      sha256_aarch64 = "sha256-NNeQU9sPfH1sq3d5RUq1MWT6+7mTo1SpVfzabYSVMVI=";
-      openSha256 = "sha256-NQg+QDm9Gt+5bapbUO96UFsPnz1hG1dtEwT/g/vKHkw=";
-      settingsSha256 = "sha256-6n9mVkEL39wJj5FB1HBml7TTJhNAhS/j5hqpNGFQE4w=";
-      persistencedSha256 = "sha256-dgmco+clEIY8bedxHC4wp+fH5JavTzyI1BI8BxoeJJI=";
-    };
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
 
     prime = {
-      offload = {
-        enable = true;
-          enableOffloadCmd = true;
-      };
+      sync.enable = true;
       nvidiaBusId = "PCI:1:0:0";
       intelBusId = "PCI:0:2:0";
     };
@@ -142,6 +132,36 @@ user: system: desktop:
         };
       };
     };
+
+    tlp = {
+      enable = true;
+      settings = {
+        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+
+        CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+
+        CPU_MIN_PERF_ON_AC = 0;
+        CPU_MAX_PERF_ON_AC = 100;
+        CPU_MIN_PERF_ON_BAT = 0;
+        CPU_MAX_PERF_ON_BAT = 20;
+      };
+    };
+
+    auto-cpufreq = {
+      enable = true;
+      settings = {
+        battery = {
+          governor = "powersave";
+          turbo = "never";
+        };
+        charger = {
+          governor = "performance";
+          turbo = "auto";
+        };
+      };
+    };
   };
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
@@ -215,6 +235,30 @@ user: system: desktop:
       noto-fonts-emoji
     ];
     fontconfig.defaultFonts.monospace = [ "JetBrainsMono" ];
+  };
+
+  specialisation = {
+    nvidia.configuration = {
+      # Nvidia Configuration
+      services.xserver.videoDrivers = [ "nvidia" ];
+      hardware.graphics.enable = true;
+
+      # Optionally, you may need to select the appropriate driver version for your specific GPU.
+      hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+      # nvidia-drm.modeset=1 is required for some wayland compositors, e.g. sway
+      hardware.nvidia.modesetting.enable = true;
+
+      hardware.nvidia.prime = {
+        sync.enable = true;
+
+        # Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA
+        nvidiaBusId = "PCI:1:0:0";
+
+        # Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA
+        intelBusId = "PCI:0:2:0";
+      };
+    };
   };
 
   system.stateVersion = "24.11";
