@@ -57,23 +57,17 @@ in
         };
       };
 
-      animations = {
-        enabled = true;
-      };
+      animations.enabled = true;
 
       # Inputs (keyboard & mouse)
       input = {
         kb_layout = "us";
         follow_mouse = 1;
         sensitivity = 0.5;
-        touchpad = {
-          natural_scroll = true;
-        };
+        touchpad.natural_scroll = true;
       };
 
-      render = {
-        explicit_sync = false;
-      };
+      render.explicit_sync = false;
 
       env = [
         "LIBVA_DRIVER_NAME,nvidia"
