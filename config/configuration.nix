@@ -50,9 +50,9 @@ user: system: desktop:
     package = config.boot.kernelPackages.nvidiaPackages.stable;
 
     prime = {
-      sync.enable = true;
-      nvidiaBusId = "PCI:1:0:0";
-      intelBusId = "PCI:0:2:0";
+    sync.enable = true;
+    nvidiaBusId = "PCI:1:0:0";
+    intelBusId = "PCI:0:2:0";
     };
   };
 
@@ -162,6 +162,8 @@ user: system: desktop:
         };
       };
     };
+
+    power-profiles-daemon.enable = false;
   };
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
@@ -194,6 +196,10 @@ user: system: desktop:
       localNetworkGameTransfers.openFirewall = true;
     };
     virt-manager.enable = true;
+    coolercontrol = {
+      enable = true;
+      nvidiaSupport = true;
+    };
   };
 
   xdg.portal.enable = true;
