@@ -73,6 +73,7 @@
     easyeffects
     kdePackages.kcolorpicker
     chromium
+    localsend
     parsec-bin
     obsidian
     flatpak
@@ -118,6 +119,7 @@
         bierner.github-markdown-preview
         mvllow.rose-pine
         leonardssh.vscord
+        jnoortheen.nix-ide
       ];
     };
 

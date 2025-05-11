@@ -202,6 +202,10 @@ user: system: desktop:
     };
   };
 
+  environment.systemPackages = [
+    pkgs.coolercontrol.coolercontrold
+  ];
+
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
