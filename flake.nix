@@ -21,7 +21,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
+      url = "github:Gerg-L/spicetify-nix?rev=1dd4328f82115887901a685ecd9fa6e1d1db2d0c";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprpanel = {

@@ -40,8 +40,6 @@ user: system: desktop:
     };
   };
 
-  hardware.opengl.enable = true;
-
   hardware.nvidia = { 
     open = false;
     nvidiaSettings = true;
@@ -202,8 +200,15 @@ user: system: desktop:
     };
   };
 
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     pkgs.coolercontrol.coolercontrold
+    mesa
+    libGL
+    libGLU
+    xorg.libX11
+    xorg.libXext
+    xorg.libXxf86vm
+    xorg.libXi
   ];
 
   xdg.portal.enable = true;
