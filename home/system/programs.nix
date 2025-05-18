@@ -31,7 +31,6 @@
     # Multimedia Tools
     viu
     vlc
-    (wrapOBS { plugins = with obs-studio-plugins; [ obs-websocket ]; })
     wayvnc
     ffmpeg
     fzf
@@ -69,7 +68,8 @@
     bottles
 
     # Day-to-Day Applications
-    inputs.zen-browser.outputs.packages.${pkgs.system}.default
+    zen
+    osu-lazer
     easyeffects
     kdePackages.kcolorpicker
     chromium
@@ -84,6 +84,13 @@
     home-manager.enable = true;
 
     ripgrep.enable = true;
+
+    obs-studio = {
+      enable = true;
+      plugins = with pkgs.obs-studio-plugins; [
+        droidcam-obs
+      ];
+    };
 
     git = {
       enable = true;

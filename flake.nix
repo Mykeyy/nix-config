@@ -45,7 +45,10 @@
     let
       system = "x86_64-linux";
 
-      overlays = [ inputs.hyprpanel.overlay ];
+      overlays = [
+        inputs.hyprpanel.overlay
+        inputs.zen-browser.overlay
+      ];
 
       unstable = import nixpkgs {
         inherit system overlays;

@@ -40,7 +40,7 @@ user: system: desktop:
     };
   };
 
-  hardware.nvidia = { 
+  hardware.nvidia = {
     open = false;
     nvidiaSettings = true;
     modesetting.enable = true;
@@ -48,14 +48,14 @@ user: system: desktop:
     package = config.boot.kernelPackages.nvidiaPackages.stable;
 
     prime = {
-    sync.enable = true;
-    nvidiaBusId = "PCI:1:0:0";
-    intelBusId = "PCI:0:2:0";
+      sync.enable = true;
+      nvidiaBusId = "PCI:1:0:0";
+      intelBusId = "PCI:0:2:0";
     };
   };
 
   boot = {
-    kernelPackages = pkgs.linuxKernel.packages.linux_6_12;
+    kernelPackages = pkgs.linuxKernel.packages.linux_6_14;
     kernelParams = system.kernelParams;
     kernelModules = [ "v4l2loopback" ];
     blacklistedKernelModules = system.graphics.blacklists;
