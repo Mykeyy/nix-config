@@ -57,7 +57,11 @@ user: system: desktop:
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_6_14;
     kernelParams = system.kernelParams;
+    extraModulePackages = with unstable.linuxKernel.packages.linux_6_14; [ v4l2loopback ];
     kernelModules = [ "v4l2loopback" ];
+    extraModprobeConfig = ''
+      options v4l2loopback devices=1 video_nr=1 card_label="OBS Virtual Camera" exclusive_caps=1
+    '';
     blacklistedKernelModules = system.graphics.blacklists;
     loader = {
       systemd-boot.enable = true;
