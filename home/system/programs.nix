@@ -66,6 +66,7 @@
     # Games
     lutris-unwrapped
     bottles
+    resilio-sync
 
     # Day-to-Day Applications
     zen
@@ -119,7 +120,6 @@
       profiles.default.extensions = with pkgs.vscode-extensions; [
         pkief.material-icon-theme
         bradlc.vscode-tailwindcss
-        vscodevim.vim
         ms-vsliveshare.vsliveshare
         ms-vscode.live-server
         kamikillerto.vscode-colorize
