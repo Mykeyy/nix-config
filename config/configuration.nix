@@ -231,10 +231,7 @@ user: system: desktop:
       corefonts
       vistafonts
       noto-fonts
-      # noto-fonts-emoji
-    ];
-    fonts = [
-      /mykey/.nix/font/AppleColorEmoji.ttf
+      noto-fonts-emoji
     ];
     fontconfig.defaultFonts.monospace = [ "JetBrainsMono" ];
   };
