@@ -40,6 +40,10 @@ user: system: desktop:
     };
   };
 
+
+
+  hardware.graphics.enable = true;
+
   hardware.nvidia = {
     open = false;
     nvidiaSettings = true;
@@ -53,7 +57,7 @@ user: system: desktop:
       intelBusId = "PCI:0:2:0";
     };
   };
-
+  
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_6_14;
     kernelParams = system.kernelParams;
@@ -85,6 +89,7 @@ user: system: desktop:
   };
 
   services = {
+    blueman.enable = true;
     flatpak.enable = true;
     qemuGuest.enable = true;
     spice-vdagentd.enable = true;
@@ -135,22 +140,6 @@ user: system: desktop:
       };
     };
 
-    tlp = {
-      enable = true;
-      settings = {
-        CPU_SCALING_GOVERNOR_ON_AC = "performance";
-        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-
-        CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-
-        CPU_MIN_PERF_ON_AC = 0;
-        CPU_MAX_PERF_ON_AC = 100;
-        CPU_MIN_PERF_ON_BAT = 0;
-        CPU_MAX_PERF_ON_BAT = 20;
-      };
-    };
-
     auto-cpufreq = {
       enable = true;
       settings = {
@@ -166,6 +155,11 @@ user: system: desktop:
     };
 
     power-profiles-daemon.enable = false;
+    tlp.enable = true; # Advanced power management for laptops
+    thermald.enable = true; # Thermal management (Intel CPUs)
+    upower.enable = true; # Power statistics and battery reporting
+    # Optionally, enable acpid for ACPI events (lid, power button, etc.)
+    acpid.enable = true;
   };
 
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
@@ -175,9 +169,6 @@ user: system: desktop:
     dolphin
   ];
 
-  hardware = {
-    graphics.enable = true;
-  };
 
   networking = {
     hostName = system.hostname;
@@ -203,17 +194,6 @@ user: system: desktop:
       nvidiaSupport = true;
     };
   };
-
-  environment.systemPackages = with pkgs; [
-    pkgs.coolercontrol.coolercontrold
-    mesa
-    libGL
-    libGLU
-    xorg.libX11
-    xorg.libXext
-    xorg.libXxf86vm
-    xorg.libXi
-  ];
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
@@ -279,6 +259,19 @@ user: system: desktop:
       };
     };
   };
+
+  hardware = {
+    enableAllFirmware = true; # Ensures all needed firmware is available
+    cpu.intel.updateMicrocode = true; # Enable if you have an Intel CPU
+    bluetooth.enable = true;
+  };
+
+  environment.systemPackages = with pkgs; [
+    tlp
+    powertop
+    acpi
+    kdePackages.kdeconnect-kde
+  ];
 
   system.stateVersion = "24.11";
 }

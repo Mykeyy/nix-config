@@ -11,7 +11,9 @@
     nodejs
     lazygit
     lua
-    postman
+    # postman
+    lm_sensors
+    cargo
     ghostty
     pandoc
     pgadmin4-desktopmode
@@ -61,16 +63,16 @@
     superfile
     fanctl
     qpwgraph
-    coolercontrol.coolercontrol-gui
+    # coolercontrol.coolercontrol-gui
 
     # Games
     lutris-unwrapped
     bottles
-    resilio-sync
+    # resilio-sync
 
     # Day-to-Day Applications
     zen
-    osu-lazer
+    # osu-lazer
     easyeffects
     kdePackages.kcolorpicker
     chromium
@@ -100,6 +102,8 @@
 
       extraConfig = {
         init.defaultBranch = development.git.defaultBranch;
+        # Add this block to rewrite SSH to HTTPS for GitHub
+        url."https://github.com/".insteadOf = "git@github.com:";
       };
     };
 
@@ -111,7 +115,7 @@
     };
 
     zed-editor = {
-      enable = true;
+      enable = false;
     };
 
     vscode = {
