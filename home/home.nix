@@ -13,7 +13,6 @@
     ./spicetify.nix
     ./system/fastfetch.nix
     ./system/stylixTargets.nix
-    ./system/hyprland.nix
     ./system/plasma.nix
     ./file.nix
   ];

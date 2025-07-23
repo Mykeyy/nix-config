@@ -30,7 +30,7 @@ mongodb.enable = true
 enable = true
 
 [desktop.hyprland]
-enable = true
+enable = false
 
 [[desktop.hyprland.monitors]]
 name = "eDP-1"

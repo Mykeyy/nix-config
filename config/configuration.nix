@@ -39,24 +39,6 @@ user: system: desktop:
       diskSize = 128 * 1024;
     };
   };
-
-
-
-  hardware.graphics.enable = true;
-
-  hardware.nvidia = {
-    open = false;
-    nvidiaSettings = true;
-    modesetting.enable = true;
-    powerManagement.enable = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-
-    prime = {
-      sync.enable = true;
-      nvidiaBusId = "PCI:1:0:0";
-      intelBusId = "PCI:0:2:0";
-    };
-  };
   
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_6_14;
@@ -86,6 +68,27 @@ user: system: desktop:
       enable = true;
     };
     polkit.enable = true;
+  };
+
+  hardware.nvidia.open = true;
+
+  specialisation = {
+    nvidia.configuration = {
+      services.xserver.videoDrivers = [ "nvidia" ];
+      hardware.graphics.enable = true;
+      hardware.nvidia.open = true;
+      
+      hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.latest;
+      hardware.nvidia.modesetting.enable = true;
+
+
+      hardware.nvidia.prime = {
+        sync.enable = true;
+
+        nvidiaBusId = "PCI:1:0:0";
+        intelBusId = "PCI:0:2:0";
+      };
+    };
   };
 
   services = {
@@ -179,8 +182,8 @@ user: system: desktop:
   environment.stub-ld.enable = true;
 
   programs = {
-    xwayland.enable = true;
-    hyprland.enable = true;
+    xwayland.enable = false;
+    hyprland.enable = false;
     nix-ld.enable = true;
     steam = {
       enable = true;
@@ -234,30 +237,6 @@ user: system: desktop:
       noto-fonts-emoji
     ];
     fontconfig.defaultFonts.monospace = [ "JetBrainsMono" ];
-  };
-
-  specialisation = {
-    nvidia.configuration = {
-      # Nvidia Configuration
-      services.xserver.videoDrivers = [ "nvidia" ];
-      hardware.graphics.enable = true;
-
-      # Optionally, you may need to select the appropriate driver version for your specific GPU.
-      hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
-
-      # nvidia-drm.modeset=1 is required for some wayland compositors, e.g. sway
-      hardware.nvidia.modesetting.enable = true;
-
-      hardware.nvidia.prime = {
-        sync.enable = true;
-
-        # Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA
-        nvidiaBusId = "PCI:1:0:0";
-
-        # Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA
-        intelBusId = "PCI:0:2:0";
-      };
-    };
   };
 
   hardware = {

@@ -24,8 +24,8 @@
       url = "github:Gerg-L/spicetify-nix?rev=1dd4328f82115887901a685ecd9fa6e1d1db2d0c";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
+    auto-cpufreq = {
+      url = "github:AdnanHodzic/auto-cpufreq";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -36,17 +36,16 @@
       nixpkgs,
       home-manager,
       plasma-manager,
-      hyprpanel,
       spicetify-nix,
       nixcord,
       stylix,
+      auto-cpufreq,
       ...
     }:
     let
       system = "x86_64-linux";
 
       overlays = [
-        inputs.hyprpanel.overlay
         inputs.zen-browser.overlay
       ];
 
@@ -94,6 +93,7 @@
             };
           }
           stylix.nixosModules.stylix
+          inputs.auto-cpufreq.nixosModules.default
         ];
       };
       formatter.${system} = pkgs.nixfmt-tree;

@@ -32,9 +32,5 @@
     ".config/zed/settings.json" = {
       source = ./system/config/zed/settings.json;
     };
-    ".config/hyprpanel" = {
-      source = ./system/config/hyprpanel;
-      recursive = true;
-    };
   };
 }

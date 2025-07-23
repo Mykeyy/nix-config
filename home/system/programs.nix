@@ -42,16 +42,9 @@
     wl-clipboard
     file
     tree
-    waybar
-    rofi-wayland
-    wofi
-    mako
     libnotify
     pavucontrol
-    slurp
-    grim
     killall
-    swww
     xclicker
 
     # School Tools
@@ -68,12 +61,14 @@
     # Games
     lutris-unwrapped
     bottles
+    scrcpy
     # resilio-sync
 
     # Day-to-Day Applications
     zen
     # osu-lazer
     easyeffects
+    davinci-resolve
     kdePackages.kcolorpicker
     chromium
     localsend
@@ -102,8 +97,6 @@
 
       extraConfig = {
         init.defaultBranch = development.git.defaultBranch;
-        # Add this block to rewrite SSH to HTTPS for GitHub
-        url."https://github.com/".insteadOf = "git@github.com:";
       };
     };
 
