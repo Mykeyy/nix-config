@@ -72,10 +72,13 @@
     kdePackages.kcolorpicker
     chromium
     localsend
-    parsec-bin
+    # parsec-bin
     obsidian
     flatpak
     prismlauncher
+
+    #gamemodder
+    r2modman
   ];
 
   programs = {

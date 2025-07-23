@@ -1,5 +1,6 @@
 user: system: desktop:
 {
+  lib,
   nixpkgs,
   pkgs,
   config,
@@ -41,9 +42,9 @@ user: system: desktop:
   };
   
   boot = {
-    kernelPackages = pkgs.linuxKernel.packages.linux_6_14;
+    kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = system.kernelParams;
-    extraModulePackages = with pkgs.linuxKernel.packages.linux_6_14; [ v4l2loopback ];
+    extraModulePackages = with pkgs.linuxPackages_latest; [ v4l2loopback ];
     kernelModules = [ "v4l2loopback" ];
     extraModprobeConfig = ''
       options v4l2loopback devices=1 video_nr=1 card_label="OBS Virtual Camera" exclusive_caps=1
@@ -182,7 +183,7 @@ user: system: desktop:
   environment.stub-ld.enable = true;
 
   programs = {
-    xwayland.enable = false;
+    xwayland.enable = lib.mkForce true;
     hyprland.enable = false;
     nix-ld.enable = true;
     steam = {
